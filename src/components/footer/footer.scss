@@ -1,0 +1,13 @@
+$footer_bg: #222831;
+$footer_border: #f05454;
+
+footer {
+  min-width: 100%;
+  background-color: $footer_bg;
+  position: fixed;
+  bottom: 0;
+  border-top: $footer_border solid;
+  h3{
+    text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+$header_bg:#222831;
+$header_border:#f05454;
+
+header {
+  background-color: $header_bg;
+  min-width: 100%;
+  margin-bottom: 30px;
+  border-bottom: solid $header_border;
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+}
