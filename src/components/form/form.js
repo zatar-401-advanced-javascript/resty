@@ -24,7 +24,6 @@ function Form(props) {
       </form>
     </>
   );
-
   function handleClick(e) {
     const methods = ['GET', 'POST', 'PUT', 'DELETE'];
     methods.forEach((elemnt) => {

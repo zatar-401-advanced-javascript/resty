@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import App from '../src/App';
+import App from '../App';
 
 test('Results rendered after submitting', async () => {
   render(<App />);
