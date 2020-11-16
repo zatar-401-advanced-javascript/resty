@@ -1,4 +1,6 @@
 {
+  "main": "src/index.js",
+  "homepage": "https://zatar-401-advanced-javascript.github.io/resty/",
   "name": "resty",
   "version": "0.1.0",
   "private": true,
@@ -6,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
+    "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -19,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint '**/*.js'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,7 +45,6 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^4.8.0",
     "eslint": "^7.13.0"
   }
 }
