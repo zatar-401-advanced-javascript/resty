@@ -1,13 +1,5 @@
 $result_bg: #30475e;
 $result_border: #f05454;
-main{
-  width: 100%;
-  display: flex;
-  flex-wrap:warp;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 form{
   display: flex;
   flex-wrap:warp;
@@ -46,19 +38,11 @@ form{
     color: #30475e;
     border-radius: 2px;
     height: 40px;
+    font-weight: bold;
+    font-size: 18px;
   }
   button:hover{
     background-color: #30475e;
     color: $result_border;
   }
-}
-
-#result{
-  margin-top: 50px;
-  width: 40%;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  border: solid $result_border;
-  background-color: $result_bg;
 }

@@ -1,0 +1,23 @@
+$result_bg: #ffffff17;
+$result_border: #f05454;
+#count{
+  color:$result_border;
+  width: 40%;
+  font-weight: bold;
+  p{
+    margin:2px
+  }
+}
+#result{
+  // margin-top: 50px;
+  margin-bottom: 100px;
+  width: 40%;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid #30475e;
+  border-radius: 4px;
+  // background-color: $result_bg;
+
+}
