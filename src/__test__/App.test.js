@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from '../App';
 
-test('Results rendered after submitting', async () => {
+test('Results rendered after submitting and spinner show and hide after results', async () => {
   render(<App />);
   // screen.debug();
   // const method = screen.getByLabelText('GET')
@@ -11,9 +11,11 @@ test('Results rendered after submitting', async () => {
   // console.log(method.value)
 
   const button = screen.getByTestId('button');
-  fireEvent.submit(button, { target: { elements: { url: { value: 'https://jsonplaceholder.typicode.com/users' }, method: { value: 'GET' } } } })
-
+  fireEvent.submit(button, { target: { elements: { url: { value: 'https://jsonplaceholder.typicode.com/users' }, method: { value: 'GET' },body:{value:''} } } })
+  const wait = screen.getByTestId('loading')
+  expect(wait).toBeInTheDocument();
   const results = await waitFor(() => screen.getByTestId('count'));
+  expect(wait).not.toBeInTheDocument();
   expect(results).toBeInTheDocument();
 });
 

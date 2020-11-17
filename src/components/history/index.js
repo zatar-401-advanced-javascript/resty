@@ -7,7 +7,7 @@ export default function History(props) {
     <>
       {
         history.map((query) => {
-          return <li onClick={handelClick} key={query.method + query.url}><span>{query.method}</span><span>{query.url}</span></li>;
+          return <li onClick={handelClick} key={query.method + query.url}><section id='spanMethod'>{query.method}</section><section id='spanURL'>{query.url}</section></li>;
         })
       }
     </>

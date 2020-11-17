@@ -19,7 +19,7 @@ class FormTest extends React.Component {
     });
     const { url, method, body } = e.target.elements;
     const selected = document.getElementById(`${method.value}`);
-    selected.style.color = 'red';
+    selected.style.color = '#f05454';
     selected.style.fontWeight = 'bold';
 
     e.preventDefault();
@@ -73,7 +73,7 @@ class FormTest extends React.Component {
         </form>
         <If condition={this.state.isFeatching === true}>
           <Then>
-            <img alt='loading' src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif'></img>
+            <img data-testid='loading' alt='loading' src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif'></img>
           </Then>
         </If>
       </>

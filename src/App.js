@@ -27,6 +27,7 @@ class App extends React.Component {
         <Header />
         <main>
           <ul>
+            <h3>History</h3>
             <History />
           </ul>
           <Form errorHandler={this.error} handler={this.update}/>

@@ -4,7 +4,6 @@ import ReactJson from 'react-json-view'
 import { If, Then, Else } from 'react-if';
 
 function Results(props) {
-  console.log(props.isError)
   return (
     <If condition={props.isError === false}>
       <Then>
