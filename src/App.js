@@ -1,35 +1,31 @@
+//=============== Dependencies ===============\\
 import React from 'react';
-import './App.scss';
-import Form from './components/form/form';
-import Results from './components/results/results';
+import { Switch, Route } from 'react-router-dom';
 import History from './components/history';
+import Help from './components/help';
+import Home from './components/home';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { errorBody: '', isError: false, Count: 0, Results: [], Headers: {} };
-  }
+//=============== Routes ===============\\
+export default function App() {
+  return (
+    <Switch>
+      
+      <Route exact path="/" component={Home} />
 
-  update = async (results) => {
-    this.setState({isError: false, Headers: results.headers, Results: results.body, Count: results.body.length ? results.body.length : results.body.count ? results.body.count : 1 });
-  }
-
-  error = (err) => {
-    this.setState({ isError: true, errorBody: err })
-  }
-
-
-  render() {
-    const fromHistory = this.props.location.query || null 
-    return (
-      <>
+      <Route path="/history">
         <main>
-          <History/>
-          <Form fromHistory={fromHistory} errorHandler={this.error} handler={this.update} />
-          <Results errorBody={this.state.errorBody} isError={this.state.isError} headers={this.state.Headers} count={this.state.Count} results={this.state.Results} />
+          <History isHistory={true} />
         </main>
-      </>
-    );
-  }
-}
-export default App;
+      </Route>
+
+      <Route path="/help" component={Help} />
+
+      <Route>
+        <div>
+          <h2>404 Page not found</h2>
+        </div>
+      </Route>
+
+    </Switch>
+  );
+};

@@ -1,9 +1,11 @@
+//=============== Dependencies ===============\\
 import React from 'react';
 import './history.scss';
 import Results from '../results/results';
 import { If, Then, Else } from 'react-if';
 import { Link } from 'react-router-dom';
 
+//=============== History Component ===============\\
 class History extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class History extends React.Component {
       button.click();
     }
   }
-
+//=============== Render ===============\\
   render() {
     let history = localStorage.getItem("history") ? JSON.parse(localStorage.getItem("history")) : [];
     return (

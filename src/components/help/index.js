@@ -1,6 +1,8 @@
+//=============== Dependencies ===============\\
 import React from 'react';
 import './help.scss';
 
+//=============== Render ===============\\
 export default function Help() {
   return (
     <div className='aboutus'>
@@ -9,5 +11,5 @@ export default function Help() {
       <p>Simply put URL in form and choose the method you want then click go!</p>
       <p>You will see the results</p>
     </div>
-  )
+  );
 }
