@@ -23,6 +23,7 @@ main {
   align-items: center;
   position: relative;
   ul {
+    font-size: 12px;
     position: absolute;
     left: 0;
     top: -30px;
@@ -35,7 +36,7 @@ main {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    min-width: 24%;
+    width: 27%;
     // align-items: center;
     h3 {
       margin-top: 0;

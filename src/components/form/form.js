@@ -26,7 +26,7 @@ class FormTest extends React.Component {
     if (method.value === 'DELETE') method.value = 'DEL';
     return superagent[method.value.toLowerCase()](url.value).set('Content-Type', 'application/json').send(body.value).then((data) => {
 
-      let query = { url: url.value, method: method.value, body: body.value }
+      let query = { url: url.value, method: method.value, body: body.value, data: data.body }
       let history = localStorage.getItem("history") ? JSON.parse(localStorage.getItem("history")) : [];
       let check = false;
 
@@ -43,11 +43,24 @@ class FormTest extends React.Component {
         localStorage.setItem("history", JSON.stringify(history))
         return this.props.handler(data)
       }
-    }).catch((err)=>{
+    }).catch((err) => {
       this.setState({ isFeatching: false })
       console.log(err.message)
       this.props.errorHandler(err.message)
     })
+  }
+
+  fromHistory = (query) => {
+    const selected = document.getElementById(`link`);
+    selected.value = query.url;
+    const radiobtn = document.getElementById(query.method + 'input');
+    radiobtn.checked = true;
+  }
+
+  componentDidMount(){
+    if (this.props.fromHistory) {
+      this.fromHistory(this.props.fromHistory)
+    }
   }
 
   render() {

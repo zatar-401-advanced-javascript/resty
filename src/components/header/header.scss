@@ -6,9 +6,47 @@ header {
   min-width: 100%;
   margin-bottom: 30px;
   border-bottom: solid $header_border;
-  height: 130px;
+  // height: 130px;
   h1 {
     text-align: center;
     font-size: 50px;
+    margin: 5px;
+  }
+  nav {
+    background: #222831c9;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        position: relative;
+        a {
+          color: #e8e8e8;
+          text-decoration: none;
+          &:after {
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          &.active,
+          &.active:hover {
+            color: #f05454;
+          }
+        }
+        &:hover {
+          background: #111;
+          a {
+            color: #F5F5F5;
+          }
+        }
+      }
+    }
   }
 }
+
+
