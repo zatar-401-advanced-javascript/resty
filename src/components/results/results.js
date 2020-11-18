@@ -1,17 +1,20 @@
+//=============== Dependencies ===============\\
 import React from 'react';
 import './results.scss';
-import ReactJson from 'react-json-view'
+import ReactJson from 'react-json-view';
 import { If, Then, Else } from 'react-if';
 
+//=============== Render ===============\\
 function Results(props) {
-  // let history = localStorage.getItem("history") ? JSON.parse(localStorage.getItem("history")) : [];
   return (
+
     <If condition={props.isHistory === true}>
       <Then>
         <section id='result'>
           <ReactJson name='Response' src={props.results} />
         </section>
       </Then>
+
       <Else>
         <If condition={props.isError === false}>
           <Then>
@@ -23,6 +26,7 @@ function Results(props) {
                   <ReactJson name='Response' src={props.results} />
                 </section>
               </Then>
+              
               <Else>
                 <section id='result'>
 
@@ -30,6 +34,7 @@ function Results(props) {
               </Else>
             </If>
           </Then>
+
           <Else>
             <section id='result'>
               <strong>Error: </strong>{props.errorBody}
@@ -38,8 +43,6 @@ function Results(props) {
         </If>
       </Else>
     </If>
-
-
   )
 }
 
